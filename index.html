@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Document Head -->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather Dashboard</title>
+</head>
+<!-- Document Body -->
+
+<body>
+    <div class="header">
+        <p>Weather Dashboard</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="card" id="leftCard" class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                <br>
+                <p style="margin-left: 30px; font-size: 24px; margin-bottom: 5px;">Search for a City:</p>
+                <div class="container">
+                    <input
+                        style="margin-left: 10px; width: 200px; height: 45px; border-radius: 5px; margin-bottom: 20px;"
+                        class="col-xs-1 col-sm-6 col-md-7 col-lg-8 col-xl-12"></input>
+                    <button
+                        style="height: 45px; width: 50px; border-radius: 5px; background-color: rgb(2, 150, 150); border: gray solid 1px;">
+                        <i class="fas fa-search" style="color: white;"></i>
+                    </button>
+                </div>
+                <div class="container" id="innerContainer">
+                    <div style="height: 45px; margin-top: 20px;">San Diego</div>
+                </div>
+                <div class="container" id="innerContainer">
+                    <div style="height: 45px; margin-top: 20px;">Los Angeles</div>
+                </div>
+                <div class="container" id="innerContainer">
+                    <div style="height: 45px; margin-top: 20px;">Phoenix</div>
+                </div>
+                <div class="container" id="innerContainer">
+                    <div style="height: 45px; margin-top: 20px;">Denver</div>
+                </div>
+                <div class="container" id="innerContainer">
+                    <div style="height: 45px; margin-top: 20px;">Seattle</div>
+                </div>
+            </div>
+            <div class="card" id="rightCard" class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+                <div class="container" id="weatherStats">
+                    <br>
+                    <h2 id="cityName">San Diego (10/22/2019)</h2>
+                    <br>
+                    <p id="temperature">Temperature:</p>
+                    <p id="humidity">Humidity:</p>
+                    <p id="windSpeed">Wind Speed:</p>
+                    <p id="uvIndex">UV Index:</p>
+                </div>
+                <div class="container" id="fiveDayForecast">
+                    <br>
+                    <h2>5-Day Forecast:</h2>
+                    <div class="row">
+                        <div id="weatherBox" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                            <div id="weatherBoxDate">10/23/2019</div>
+                            <br>
+                            <br>
+                            <div id="weatherBoxTemp">Temp:</div>
+                            <br>
+                            <div id="weatherBoxHum">Humidity:</div>
+                        </div>
+                        <div id="weatherBox" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                            <div id="weatherBoxDate">10/24/2019</div>
+                            <br>
+                            <br>
+                            <div id="weatherBoxTemp">Temp:</div>
+                            <br>
+                            <div id="weatherBoxHum">Humidity:</div>
+                        </div>
+                        <div id="weatherBox" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                            <div id="weatherBoxDate">10/25/2019</div>
+                            <br>
+                            <br>
+                            <div id="weatherBoxTemp">Temp:</div>
+                            <br>
+                            <div id="weatherBoxHum">Humidity:</div>
+                        </div>
+                        <div id="weatherBox" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                            <div id="weatherBoxDate">10/26/2019</div>
+                            <br>
+                            <br>
+                            <div id="weatherBoxTemp">Temp:</div>
+                            <br>
+                            <div id="weatherBoxHum">Humidity:</div>
+                        </div>
+                        <div id="weatherBox" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                            <div id="weatherBoxDate">10/27/2019</div>
+                            <br>
+                            <br>
+                            <div id="weatherBoxTemp">Temp:</div>
+                            <br>
+                            <div id="weatherBoxHum">Humidity:</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Links to Javascript Page, Jquery, and Moment.js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

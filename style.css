@@ -1,0 +1,75 @@
+body {
+    font-weight: lighter;
+}
+.header {
+    text-align: center;
+    color: white;
+    background-color: rgb(63, 63, 70);
+    height: 90px;
+    font-size: 44px;
+    line-height: 2;
+}
+
+#leftCard {
+    background-color:rgb(219, 219, 219);
+    width: 30%;
+    height: inherit;
+    border-radius: 0px;
+    
+    
+}
+
+#innerContainer {
+    background-color: white;
+    border: lightgrey solid 1px;
+    font-size: 18px;
+    color: rgb(107, 107, 107);
+    border-radius: 5px;
+    width: 100px auto;
+}
+
+#rightCard {
+    background-color: white;
+    width: 70%;
+    height: inherit;
+    border: none;
+}
+
+#weatherStats {
+    background-color: rgb(180, 255, 67);
+    width: 95%;
+    margin-top: 15px;
+    height: 285px;
+    border-radius: 5px;
+    border: lightgray solid 1px;
+    color: rgb(73, 73, 73);
+
+}
+
+#fiveDayForecast {
+    width: 95%;
+    margin-top: 15px;
+    height: inherit;
+    border: lightgrey solid 1px;
+    border-radius: 5px;
+    color: rgb(73, 73, 73);
+
+}
+
+#weatherBox {
+    background-color: rgb(2, 150, 150);
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    height: 170px;
+    border-radius: 5px;
+    border: lightgrey solid 1px;
+    margin-bottom: 15px;
+    text-align: left;
+    padding-top: 10px;
+    color: white;
+    
+}
+
+
