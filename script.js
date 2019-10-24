@@ -31,12 +31,27 @@ $.ajax({
 
         // Append city name, current date, and weather description
 
-        $("#cityName").text(response.name + " (" + currentDate + ")" + " " + response.weather[0].main);
+        $("#cityName").text(response.name + " (" + currentDate + ")");
 
-        //if ((response.weather[0].main) === "Clouds") {
-        //alert("Hello");
-        //$("#cityName").append("<div><i class="fas fa-cloud"></i></div>");
-        //}
+        if ((response.weather[0].main) === "Clouds") {
+            $("#cityName").append(" " + '<i class="fas fa-cloud">');
+        }
+        if ((response.weather[0].main) === "Clear") {
+            $("#cityName").append(" " + '<i class="fas fa-sun">');
+        }
+        if ((response.weather[0].main) === "Rain") {
+            $("#cityName").append(" " + '<i class="fas fa-cloud-rain">');
+        }
+        if ((response.weather[0].main) === "Snow") {
+            $("#cityName").append(" " + '<i class="far fa-snowflake">');
+        }
+        if ((response.weather[0].main) === "Fog") {
+            $("#cityName").append(" " + '<i class="fas fa-smog">');
+        }
+        if ((response.weather[0].main) === "Mist") {
+            $("#cityName").append(" " + '<i class="fas fa-smog">');
+        }
+
         // Grab current temperature info and convert to Farenheit and round to one decimal place
 
         var tempF = (response.main.temp - 273.15) * 1.80 + 32;
@@ -101,9 +116,27 @@ $.ajax({
         var roundedDay1 = Math.round(forecastTempDay1F * 10) / 10;
 
         $("#weatherBoxDate1").text(datePlus1);
-        $("#weatherDescription1").text(response.list[6].weather[0].main);
         $("#weatherBoxTemp1").text("Temp: " + roundedDay1 + " °F");
         $("#weatherBoxHum1").text("Humidity: " + response.list[6].main.humidity + "%");
+
+        if ((response.list[6].weather[0].main) === "Clouds") {
+            $("#weatherDescription1").append(" " + '<i class="fas fa-cloud">');
+        }
+        if ((response.list[6].weather[0].main) === "Clear") {
+            $("#weatherDescription1").append(" " + '<i class="fas fa-sun">');
+        }
+        if ((response.list[6].weather[0].main) === "Rain") {
+            $("#weatherDescription1").append(" " + '<i class="fas fa-cloud-rain">');
+        }
+        if ((response.list[6].weather[0].main) === "Snow") {
+            $("#weatherDescription1").append(" " + '<i class="far fa-snowflake">');
+        }
+        if ((response.list[6].weather[0].main) === "Fog") {
+            $("#weatherDescription1").append(" " + '<i class="fas fa-smog">');
+        }
+        if ((response.list[6].weather[0].main) === "Mist") {
+            $("#weatherDescription1").append(" " + '<i class="fas fa-smog">');
+        }
 
         // Day 2 of 5-day forecast weather and text appending
 
@@ -112,9 +145,27 @@ $.ajax({
         var roundedDay2 = Math.round(forecastTempDay2F * 10) / 10;
 
         $("#weatherBoxDate2").text(datePlus2);
-        $("#weatherDescription2").text(response.list[14].weather[0].main);
         $("#weatherBoxTemp2").text("Temp: " + roundedDay2 + " °F");
         $("#weatherBoxHum2").text("Humidity: " + response.list[14].main.humidity + "%");
+
+        if ((response.list[14].weather[0].main) === "Clouds") {
+            $("#weatherDescription2").append(" " + '<i class="fas fa-cloud">');
+        }
+        if ((response.list[14].weather[0].main) === "Clear") {
+            $("#weatherDescription2").append(" " + '<i class="fas fa-sun">');
+        }
+        if ((response.list[14].weather[0].main) === "Rain") {
+            $("#weatherDescription2").append(" " + '<i class="fas fa-cloud-rain">');
+        }
+        if ((response.list[14].weather[0].main) === "Snow") {
+            $("#weatherDescription2").append(" " + '<i class="far fa-snowflake">');
+        }
+        if ((response.list[14].weather[0].main) === "Fog") {
+            $("#weatherDescription2").append(" " + '<i class="fas fa-smog">');
+        }
+        if ((response.list[6].weather[0].main) === "Mist") {
+            $("#weatherDescription1").append(" " + '<i class="fas fa-smog">');
+        }
 
         // Day 3 of 5-day forecast weather and text appending
 
@@ -123,9 +174,27 @@ $.ajax({
         var roundedDay3 = Math.round(forecastTempDay3F * 10) / 10;
 
         $("#weatherBoxDate3").text(datePlus3);
-        $("#weatherDescription3").text(response.list[22].weather[0].main);
         $("#weatherBoxTemp3").text("Temp: " + roundedDay3 + " °F");
         $("#weatherBoxHum3").text("Humidity: " + response.list[22].main.humidity + "%");
+
+        if ((response.list[22].weather[0].main) === "Clouds") {
+            $("#weatherDescription3").append(" " + '<i class="fas fa-cloud">');
+        }
+        if ((response.list[22].weather[0].main) === "Clear") {
+            $("#weatherDescription3").append(" " + '<i class="fas fa-sun">');
+        }
+        if ((response.list[22].weather[0].main) === "Rain") {
+            $("#weatherDescription3").append(" " + '<i class="fas fa-cloud-rain">');
+        }
+        if ((response.list[22].weather[0].main) === "Snow") {
+            $("#weatherDescription3").append(" " + '<i class="far fa-snowflake">');
+        }
+        if ((response.list[22].weather[0].main) === "Fog") {
+            $("#weatherDescription3").append(" " + '<i class="fas fa-smog">');
+        }
+        if ((response.list[22].weather[0].main) === "Mist") {
+            $("#weatherDescription3").append(" " + '<i class="fas fa-smog">');
+        }
 
         // Day 4 of 5-day forecast weather and text appending
 
@@ -134,9 +203,27 @@ $.ajax({
         var roundedDay4 = Math.round(forecastTempDay4F * 10) / 10;
 
         $("#weatherBoxDate4").text(datePlus4);
-        $("#weatherDescription4").text(response.list[30].weather[0].main);
         $("#weatherBoxTemp4").text("Temp: " + roundedDay4 + " °F");
         $("#weatherBoxHum4").text("Humidity: " + response.list[30].main.humidity + "%");
+
+        if ((response.list[30].weather[0].main) === "Clouds") {
+            $("#weatherDescription4").append(" " + '<i class="fas fa-cloud">');
+        }
+        if ((response.list[30].weather[0].main) === "Clear") {
+            $("#weatherDescription4").append(" " + '<i class="fas fa-sun">');
+        }
+        if ((response.list[30].weather[0].main) === "Rain") {
+            $("#weatherDescription4").append(" " + '<i class="fas fa-cloud-rain">');
+        }
+        if ((response.list[30].weather[0].main) === "Snow") {
+            $("#weatherDescription4").append(" " + '<i class="far fa-snowflake">');
+        }
+        if ((response.list[30].weather[0].main) === "Fog") {
+            $("#weatherDescription4").append(" " + '<i class="fas fa-smog">');
+        }
+        if ((response.list[30].weather[0].main) === "Mist") {
+            $("#weatherDescription4").append(" " + '<i class="fas fa-smog">');
+        }
 
         // Day 5 of 5-day forecast weather and text appending
 
@@ -145,8 +232,26 @@ $.ajax({
         var roundedDay5 = Math.round(forecastTempDay5F * 10) / 10;
 
         $("#weatherBoxDate5").text(datePlus5);
-        $("#weatherDescription5").text(response.list[38].weather[0].main);
         $("#weatherBoxTemp5").text("Temp: " + roundedDay5 + " °F");
         $("#weatherBoxHum5").text("Humidity: " + response.list[38].main.humidity + "%");
+
+        if ((response.list[38].weather[0].main) === "Clouds") {
+            $("#weatherDescription5").append(" " + '<i class="fas fa-cloud">');
+        }
+        if ((response.list[38].weather[0].main) === "Clear") {
+            $("#weatherDescription5").append(" " + '<i class="fas fa-sun">');
+        }
+        if ((response.list[38].weather[0].main) === "Rain") {
+            $("#weatherDescription5").append(" " + '<i class="fas fa-cloud-rain">');
+        }
+        if ((response.list[38].weather[0].main) === "Snow") {
+            $("#weatherDescription5").append(" " + '<i class="far fa-snowflake">');
+        }
+        if ((response.list[38].weather[0].main) === "Fog") {
+            $("#weatherDescription5").append(" " + '<i class="fas fa-smog">');
+        }
+        if ((response.list[38].weather[0].main) === "Mist") {
+            $("#weatherDescription5").append(" " + '<i class="fas fa-smog">');
+        }
 
     });
