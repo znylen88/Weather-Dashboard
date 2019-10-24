@@ -235,7 +235,6 @@ $.ajax({
         $("#weatherBoxTemp5").text("Temp: " + roundedDay5 + " °F");
         $("#weatherBoxHum5").text("Humidity: " + response.list[38].main.humidity + "%");
 
-<<<<<<< HEAD
         if ((response.list[38].weather[0].main) === "Clouds") {
             $("#weatherDescription5").append(" " + '<i class="fas fa-cloud">');
         }
@@ -254,7 +253,4 @@ $.ajax({
         if ((response.list[38].weather[0].main) === "Mist") {
             $("#weatherDescription5").append(" " + '<i class="fas fa-smog">');
         }
-
-=======
->>>>>>> 55a8152db38dffc7321c2121b196d24f99f93aeb
     });
