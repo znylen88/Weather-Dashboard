@@ -1,6 +1,7 @@
 body {
     font-weight: lighter;
 }
+
 .header {
     text-align: center;
     color: white;
@@ -10,13 +11,16 @@ body {
     line-height: 2;
 }
 
+#mainContainer {
+    height: 100%;
+    background-color: cadetblue;
+}
+
 #leftCard {
     background-color:rgb(219, 219, 219);
     width: 30%;
     height: inherit;
     border-radius: 0px;
-    
-    
 }
 
 #innerContainer {
@@ -33,17 +37,17 @@ body {
     width: 70%;
     height: inherit;
     border: none;
+    border-radius: 0px;
 }
 
 #weatherStats {
-    background-color: rgb(180, 255, 67);
+    background-color: rgb(156, 197, 94);
     width: 95%;
     margin-top: 15px;
     height: 285px;
     border-radius: 5px;
     border: lightgray solid 1px;
     color: rgb(73, 73, 73);
-
 }
 
 #fiveDayForecast {
@@ -53,23 +57,33 @@ body {
     border: lightgrey solid 1px;
     border-radius: 5px;
     color: rgb(73, 73, 73);
-
 }
 
-#weatherBox {
-    background-color: rgb(2, 150, 150);
+#forecastRow {
+    padding-left: 50px;
+}
+
+#weatherBoxes {
+    background-color: rgb(34, 146, 146);
     margin-top: 15px;
     margin-left: 10px;
     margin-right: 10px;
     text-align: center;
-    height: 170px;
+    height: 180px;
     border-radius: 5px;
     border: lightgrey solid 1px;
     margin-bottom: 15px;
     text-align: left;
     padding-top: 10px;
     color: white;
-    
+    font-size: 14px;
+}
+
+.footer {
+    background-color: rgb(63, 63, 70);
+    margin-top: 15px;
+    text-align: center;
+    color: rgb(63, 63, 70);
 }
 
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Document Head -->
+
+<!--Document Head-->
 
 <head>
     <meta charset="UTF-8" />
@@ -13,104 +14,109 @@
     <link rel="stylesheet" href="style.css" />
     <title>Weather Dashboard</title>
 </head>
-<!-- Document Body -->
+
+<!--Document Body-->
 
 <body>
+    <!--Header-->
     <div class="header">
         <p>Weather Dashboard</p>
     </div>
-    <div class="container">
+    <!--Main Container-->
+    <div class="container-fluid" id="mainContainer">
         <div class="row">
-            <div class="card" id="leftCard" class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+            <!--Left Card - Contains Input & Input Button-->
+            <div class="card" id="leftCard" class="col-xs-4">
                 <br>
                 <p style="margin-left: 30px; font-size: 24px; margin-bottom: 5px;">Search for a City:</p>
                 <div class="container">
-                    <input
-                        style="margin-left: 10px; width: 200px; height: 45px; border-radius: 5px; margin-bottom: 20px;"
-                        class="col-xs-1 col-sm-6 col-md-7 col-lg-8 col-xl-12"></input>
-                    <button
-                        style="height: 45px; width: 50px; border-radius: 5px; background-color: rgb(2, 150, 150); border: gray solid 1px;">
-                        <i class="fas fa-search" style="color: white;"></i>
-                    </button>
+                    <form id="searchForm">
+                        <input id="searchInput"
+                            style="margin-left: 10px; width: 200px; height: 45px; border-radius: 5px; margin-bottom: 20px; margin-top: 20px;"
+                            class="col-xs-1 col-sm-6 col-md-7 col-lg-8 col-xl-12"></input>
+                        <button id="searchBtn"
+                            style="height: 45px; width: 50px; border-radius: 5px; background-color: rgb(34, 146, 146); border: gray solid 1px;">
+                            <i class="fas fa-search" style="color: white;"></i>
+                        </button>
+                    </form>
                 </div>
-                <div class="container" id="innerContainer">
-                    <div style="height: 45px; margin-top: 20px;">San Diego</div>
-                </div>
-                <div class="container" id="innerContainer">
-                    <div style="height: 45px; margin-top: 20px;">Los Angeles</div>
-                </div>
-                <div class="container" id="innerContainer">
-                    <div style="height: 45px; margin-top: 20px;">Phoenix</div>
-                </div>
-                <div class="container" id="innerContainer">
-                    <div style="height: 45px; margin-top: 20px;">Denver</div>
-                </div>
-                <div class="container" id="innerContainer">
-                    <div style="height: 45px; margin-top: 20px;">Seattle</div>
-                </div>
+                <!--Previous Searches Render Here-->
+                <div class="container" id="innerContainer" style="margin-top: 15px;"></div>
             </div>
-            <div class="card" id="rightCard" class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+            <!--Right Card - Contains Current Weather Container & 5-Day Forecast Container-->
+            <div class="card" id="rightCard" class="col-xs-8">
+                <!--Current Weather States Container-->
                 <div class="container" id="weatherStats">
                     <br>
-                    <h2 id="cityName">San Diego (10/22/2019)</h2>
+                    <h2 id="cityName"></h2>
                     <br>
-                    <p id="temperature">Temperature:</p>
-                    <p id="humidity">Humidity:</p>
-                    <p id="windSpeed">Wind Speed:</p>
-                    <p id="uvIndex">UV Index:</p>
+                    <p id="temperature"></p>
+                    <p id="humidity"></p>
+                    <p id="windSpeed"></p>
+                    <p id="uvIndex"></p>
                 </div>
+                <!--5-Day Forecast Container-->
                 <div class="container" id="fiveDayForecast">
                     <br>
                     <h2>5-Day Forecast:</h2>
-                    <div class="row">
-                        <div id="weatherBox" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
-                            <div id="weatherBoxDate">10/23/2019</div>
+                    <div class="row" id="forecastRow">
+                        <!--5-Day Forecast Weather Boxes-->
+                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                            <div id="weatherBoxDate1" style="font-size: 16px; font-weight: bold;"></div>
                             <br>
+                            <div id="weatherDescription1"></div>
                             <br>
-                            <div id="weatherBoxTemp">Temp:</div>
+                            <div id="weatherBoxTemp1"></div>
                             <br>
-                            <div id="weatherBoxHum">Humidity:</div>
+                            <div id="weatherBoxHum1"></div>
                         </div>
-                        <div id="weatherBox" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
-                            <div id="weatherBoxDate">10/24/2019</div>
+                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                            <div id="weatherBoxDate2" style="font-size: 16px; font-weight: bold;"></div>
                             <br>
+                            <div id="weatherDescription2"></div>
                             <br>
-                            <div id="weatherBoxTemp">Temp:</div>
+                            <div id="weatherBoxTemp2"></div>
                             <br>
-                            <div id="weatherBoxHum">Humidity:</div>
+                            <div id="weatherBoxHum2"></div>
                         </div>
-                        <div id="weatherBox" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
-                            <div id="weatherBoxDate">10/25/2019</div>
+                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                            <div id="weatherBoxDate3" style="font-size: 16px; font-weight: bold;"></div>
                             <br>
+                            <div id="weatherDescription3"></div>
                             <br>
-                            <div id="weatherBoxTemp">Temp:</div>
+                            <div id="weatherBoxTemp3"></div>
                             <br>
-                            <div id="weatherBoxHum">Humidity:</div>
+                            <div id="weatherBoxHum3"></div>
                         </div>
-                        <div id="weatherBox" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
-                            <div id="weatherBoxDate">10/26/2019</div>
+                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                            <div id="weatherBoxDate4" style="font-size: 16px; font-weight: bold;"></div>
                             <br>
+                            <div id="weatherDescription4"></div>
                             <br>
-                            <div id="weatherBoxTemp">Temp:</div>
+                            <div id="weatherBoxTemp4"></div>
                             <br>
-                            <div id="weatherBoxHum">Humidity:</div>
+                            <div id="weatherBoxHum4"></div>
                         </div>
-                        <div id="weatherBox" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
-                            <div id="weatherBoxDate">10/27/2019</div>
+                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                            <div id="weatherBoxDate5" style="font-size: 16px; font-weight: bold;"></div>
                             <br>
+                            <div id="weatherDescription5"></div>
                             <br>
-                            <div id="weatherBoxTemp">Temp:</div>
+                            <div id="weatherBoxTemp5"></div>
                             <br>
-                            <div id="weatherBoxHum">Humidity:</div>
+                            <div id="weatherBoxHum5"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!--Footer-->
+    <div class="footer">Copyright</div>
     <!-- Links to Javascript Page, Jquery, and Moment.js -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
