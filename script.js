@@ -70,7 +70,7 @@ var savedLng = localStorage.getItem("Lng");
 // Running AJAX UV index call to the OpenWeatherMap API
 
 $.ajax({
-    url: "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + savedLat + "&lon=" + savedLng,
+    url: "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + savedLat + "&lon=" + savedLng,
     method: "GET"
 })
 
