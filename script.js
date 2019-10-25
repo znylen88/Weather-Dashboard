@@ -253,4 +253,5 @@ $.ajax({
         if ((response.list[38].weather[0].main) === "Mist") {
             $("#weatherDescription5").append(" " + '<i class="fas fa-smog">');
         }
+
     });

@@ -18,7 +18,6 @@ body {
 
 #leftCard {
     background-color:rgb(219, 219, 219);
-    width: 30%;
     height: inherit;
     border-radius: 0px;
 }
@@ -34,7 +33,6 @@ body {
 
 #rightCard {
     background-color: white;
-    width: 70%;
     height: inherit;
     border: none;
     border-radius: 0px;
@@ -66,10 +64,10 @@ body {
 #weatherBoxes {
     background-color: rgb(34, 146, 146);
     margin-top: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     text-align: center;
-    height: 180px;
+    height: auto;
     border-radius: 5px;
     border: lightgrey solid 1px;
     margin-bottom: 15px;
@@ -77,6 +75,7 @@ body {
     padding-top: 10px;
     color: white;
     font-size: 14px;
+    padding-bottom: 15px;
 }
 
 .footer {
