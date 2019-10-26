@@ -81,7 +81,7 @@ $.ajax({
         // Running AJAX UV index call to the OpenWeatherMap API
 
         $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + cityLat + "&lon=" + cityLng,
+            url: "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + cityLat + "&lon=" + cityLng,
             method: "GET"
         })
 
