@@ -11,6 +11,12 @@ searchForm.addEventListener("submit", function (event) {
 
 // Current Date
 
+// function stoppedTyping() {
+//     if (searchInput.value == "") {
+//     document.getElementById('start_button').disabled = false;
+// } else {
+//     document.getElementById('start_button').disabled = true;
+
 var currentDate = moment().format("MMM Do YY");
 
 // API key
@@ -72,29 +78,22 @@ $.ajax({
         var cityLat = response.coord.lat;
         var cityLng = response.coord.lon;
 
-        localStorage.setItem("Lat", cityLat);
-        localStorage.setItem("Lng", cityLng);
+        // Running AJAX UV index call to the OpenWeatherMap API
 
-    });
+        $.ajax({
+            url: "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + cityLat + "&lon=" + cityLng,
+            method: "GET"
+        })
 
-// Recall local storage items -- latitude and longitude values
+            .then(function (response) {
 
-var savedLat = localStorage.getItem("Lat");
-var savedLng = localStorage.getItem("Lng");
+                // Append UV index values to the current weather div
 
-// Running AJAX UV index call to the OpenWeatherMap API
+                $("#uvIndex").text("UV Index: " + response.value);
 
-$.ajax({
-    url: "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + savedLat + "&lon=" + savedLng,
-    method: "GET"
-})
+                console.log(response);
 
-    .then(function (response) {
-
-        // Append UV index values to the current weather div
-
-        $("#uvIndex").text("UV Index: " + response.value);
-        console.log(response);
+            });
 
     });
 
