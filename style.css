@@ -13,13 +13,13 @@ body {
 
 #mainContainer {
     height: 100%;
-    background-color: cadetblue;
 }
 
 #leftCard {
+    margin-top: 15px;
     background-color:rgb(219, 219, 219);
     height: inherit;
-    border-radius: 0px;
+    border-radius: 5px;
 }
 
 #innerContainer {
@@ -83,6 +83,7 @@ body {
     margin-top: 15px;
     text-align: center;
     color: rgb(63, 63, 70);
+    height: 100px;
 }
 
 
