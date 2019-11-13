@@ -7,3 +7,7 @@ This project was created to fine tune my web development skills in the areas of 
 When the page loads, enter a US city name using proper spacing and click the search button. Not entering an input will render no results.
 The page will load current weather data for the input city in the top right corner and a 5-day forecast in the bottom right corner.
 Previous search will appear below the search input area.
+
+##Deployed App
+
+ https://znylen88.github.io/Weather-Dashboard/
