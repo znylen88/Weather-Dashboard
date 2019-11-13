@@ -8,6 +8,6 @@ When the page loads, enter a US city name using proper spacing and click the sea
 The page will load current weather data for the input city in the top right corner and a 5-day forecast in the bottom right corner.
 Previous search will appear below the search input area.
 
-##Deployed App
+## Deployed App
 
  https://znylen88.github.io/Weather-Dashboard/
