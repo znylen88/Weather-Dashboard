@@ -5,6 +5,10 @@ var searchInput = document.getElementById("searchInput");
 
 searchForm.addEventListener("submit", function (event) {
     localStorage.setItem("City", (searchInput.value));
+
+    if (searchInput.value === null) {
+        return localStorage.value;
+    }
 });
 
 // Current Date
@@ -38,6 +42,25 @@ $.ajax({
         var weatherDescription = response.weather[0].main;
         var iconcode = response.weather[0].icon;
         var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+
+        if (response.weather[0].main === 'Clouds') {
+            $("#weatherStats").css({"background-image": "url(https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?auto=compress&cs=tinysrgb&dpr=2)", "color": "white", "box-shadow": "#494949 5px 10px 5px"});
+        }
+        if (response.weather[0].main === 'Clear') {
+            $("#weatherStats").css({"background-image": "url(https://images.pexels.com/photos/96622/pexels-photo-96622.jpeg?auto=compress&cs=tinysrgb&dpr=3)", "box-shadow": "5px 10px 5px"});
+        }
+        if (response.weather[0].main === 'Lightning') {
+            $("#weatherStats").css({"background-image": "url(https://images.pexels.com/photos/2531709/pexels-photo-2531709.jpeg?auto=compress&cs=tinysrgb&dpr=2)", "color": "white", "box-shadow": "#494949 5px 10px 5px"});
+        }
+        if (response.weather[0].main === 'Rain') {
+            $("#weatherStats").css("background-image", "url(https://images.pexels.com/photos/459483/pexels-photo-459483.jpeg?auto=compress&cs=tinysrgb&dpr=3)");
+        }
+        if (response.weather[0].main === 'Fog') {
+            $("#weatherStats").css("background-image", "url(https://images.pexels.com/photos/154246/pexels-photo-154246.jpeg?auto=compress&cs=tinysrgb&dpr=2)");
+        }
+        if (response.weather[0].main === 'Snow') {
+            $("#weatherStats").css("background-image", "url(https://images.pexels.com/photos/60561/winter-snow-nature-60561.jpeg?auto=compress&cs=tinysrgb&dpr=2)");
+        }
 
         // Append info to the current weather divs
 

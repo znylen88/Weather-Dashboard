@@ -6,10 +6,10 @@ body {
     background-color: #94b95c;
     margin-top: 25px;
     border-radius: 10px;
-    padding-left: 40px;
-    border: #94b95c solid 1px;
+    padding-left: 41px;
     color: #494949;
     box-shadow: 5px 10px 5px;
+    padding-top: 1px;
 }
 
 #fiveDayForecast {
@@ -23,12 +23,12 @@ body {
     text-align: center;
     height: auto;
     border-radius: 10px;
-    border: 2px solid #00000066;
+    border: 2px solid #dadada;
     padding-top: 10px;
     color: white;
     font-size: 14px;
     padding-bottom: 15px;
-    box-shadow: 5px 10px 5px #1f1f1f;
+    box-shadow: 5px 10px 5px #dadada;
 }
 
 .footer {

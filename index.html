@@ -14,7 +14,12 @@
     <title>Weather Dashboard</title>
     <style>
         body {
-          background-image: url('https://images.pexels.com/photos/459483/pexels-photo-459483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=800');
+          background-image: linear-gradient(to right, #f3f3f3 , #dadada);
+        }
+        #weatherStats {
+          background-image: url('https://images.pexels.com/photos/1431822/pexels-photo-1431822.jpeg?auto=compress&cs=tinysrgb&dpr=2');
+          background-size: cover;
+          background-position: 50% 50%;;
         }
         </style>
 </head>
@@ -27,7 +32,7 @@
         <div class="nav-wrapper">
           <form id="searchForm">
             <div class="input-field">
-              <input id="searchInput" type="search" required>
+              <input id="searchInput" type="search" placeholder="Search" required>
               <label class="label-icon" for="search"><i class="material-icons">search</i></label>
               <i class="material-icons">close</i>
             </div>
