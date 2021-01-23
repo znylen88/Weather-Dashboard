@@ -9,7 +9,7 @@ searchForm.addEventListener("submit", function (event) {
 
 // Current Date
 
-var currentDate = moment().format("MMM Do YY");
+var currentDate = moment().format("dddd h:mm A");
 
 // API key
 
@@ -29,21 +29,28 @@ $.ajax({
 
         // Append city name, current date, and weather description
 
-        $("#cityName").text(response.name + " (" + currentDate + ")");
+        $("#cityName").text(response.name);
+        $("#date").text(currentDate);
 
         // Grab current temperature info and convert to Farenheit and round to one decimal place
         var roundedTempF = Math.round(response.main.temp);
         var roundedWind = Math.round(response.wind.speed);
+        var weatherDescription = response.weather[0].main;
         var iconcode = response.weather[0].icon;
         var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
         // Append info to the current weather divs
 
-        $("#temperature").text("Temperature: " + roundedTempF + " °F");
         $("#humidity").text("Humidity: " + response.main.humidity + "%");
         $("#windSpeed").text("Wind Speed: " + roundedWind + " MPH");
-        $("#uvIndex").text("UV Index: ");
+        $('#weather').text(weatherDescription);
         $('#wicon').attr('src', iconurl);
+        $('#icon').append(`${roundedTempF}°`);
+        $('#icon').css({
+            "font-size":"72px",
+            "font-weight":"bolder" 
+        });
+
 
         var cityLat = response.coord.lat;
         var cityLng = response.coord.lon;
@@ -57,12 +64,11 @@ $.ajax({
 
             .then(function (response) {
 
+                console.log(response);
+
                 // Append UV index values to the current weather div
 
                 $("#uvIndex").text("UV Index: " + response.value);
-
-                console.log(response);
-
             });
 
     });
@@ -82,7 +88,7 @@ $.ajax({
 
         for (var i = 0; i < response.list.length - 32; i++) {
 
-            var datePlus1 = moment().add(1, 'days').format("MMM Do YY");
+            var datePlus1 = moment().add(1, 'days').format("dddd");
             var forecastTempDay1 = response.list[i].main.temp;
             var roundedDay1 = Math.round(forecastTempDay1);
             var iconcode1 = response.list[i].weather[0].icon;
@@ -102,7 +108,7 @@ $.ajax({
 
         for (var i = 8; i < response.list.length - 24; i++) {
 
-            var datePlus2 = moment().add(2, 'days').format("MMM Do YY");
+            var datePlus2 = moment().add(2, 'days').format("dddd");
             var forecastTempDay2 = (response.list[i].main.temp);
             var roundedDay2 = Math.round(forecastTempDay2);
             var iconcode2 = response.list[i].weather[0].icon;
@@ -122,7 +128,7 @@ $.ajax({
 
         for (var i = 16; i < response.list.length - 16; i++) {
 
-            var datePlus3 = moment().add(3, 'days').format("MMM Do YY");
+            var datePlus3 = moment().add(3, 'days').format("dddd");
             var forecastTempDay3 = (response.list[i].main.temp);
             var roundedDay3 = Math.round(forecastTempDay3);
             var iconcode3 = response.list[i].weather[0].icon;
@@ -142,7 +148,7 @@ $.ajax({
 
         for (var i = 24; i < response.list.length - 8; i++) {
 
-            var datePlus4 = moment().add(4, 'days').format("MMM Do YY");
+            var datePlus4 = moment().add(4, 'days').format("dddd");
             var forecastTempDay4 = (response.list[i].main.temp);
             var roundedDay4 = Math.round(forecastTempDay4);
             var iconcode4 = response.list[i].weather[0].icon;
@@ -162,7 +168,7 @@ $.ajax({
 
         for (var i = 32; i < response.list.length; i++) {
 
-            var datePlus5 = moment().add(5, 'days').format("MMM Do YY");
+            var datePlus5 = moment().add(5, 'days').format("dddd");
             var forecastTempDay5 = (response.list[i].main.temp);
             var roundedDay5 = Math.round(forecastTempDay5);
             var iconcode5 = response.list[i].weather[0].icon;
@@ -178,3 +184,12 @@ $.ajax({
             }
         }
     });
+
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     var elems = document.querySelectorAll('.dropdown-trigger');
+    //     var instances = M.Dropdown.init(elems, options);
+    //   });
+    
+    //   // Or with jQuery
+    
+    //   $('.dropdown-trigger').dropdown();
