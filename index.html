@@ -27,17 +27,16 @@
         <div class="row">
             <!--Left Card - Contains Input & Input Button-->
             <div id="leftCard" class="col-xs-6 col-sm-12 col-md-4 col-lg-4 col-xl-4" style="padding-bottom: 15px;">
-                <br>
-                <p style="margin-left: 30px; font-size: 24px; margin-bottom: 5px;">Search for a City:</p>
                 <div class="container">
                     <form id="searchForm">
-                        <input id="searchInput"
+                        <input id="searchInput" type="text" class="search" placeholder="City or State"
                             style="margin-left: 10px; width: 250px; height: 45px; border-radius: 5px; margin-bottom: 20px; margin-top: 20px;"
                             class="col-xs-1 col-sm-6 col-md-7 col-lg-8 col-xl-12"></input>
                         <button id="searchBtn"
                             style="height: 45px; width: 50px; border-radius: 5px; background-color: rgb(34, 146, 146); border: gray solid 1px;">
                             <i class="fas fa-search" style="color: white;"></i>
                         </button>
+                        <ul class="suggestions"></ul>
                     </form>
                 </div>
                 <!--Previous Searches Render Here-->
@@ -49,7 +48,7 @@
                 <div class="container" id="weatherStats">
                     <br>
                     <h2 id="cityName"></h2>
-                    <br>
+                    <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
                     <p id="temperature"></p>
                     <p id="humidity"></p>
                     <p id="windSpeed"></p>
@@ -57,53 +56,41 @@
                 </div>
                 <!--5-Day Forecast Container-->
                 <div class="container" id="fiveDayForecast">
-                    <br>
-                    <h2>5-Day Forecast:</h2>
                     <div class="row" id="forecastRow">
                         <!--5-Day Forecast Weather Boxes-->
-                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2"
+                            style="text-align: center;">
                             <div id="weatherBoxDate1" style="font-size: 16px; font-weight: bold;"></div>
-                            <br>
-                            <div id="weatherDescription1"></div>
-                            <br>
-                            <div id="weatherBoxTemp1"></div>
-                            <br>
+                            <div id="icon1"><img id="wicon1" src="" alt="Weather icon"></div>
+                            <h1 id="weatherBoxTemp1"></h1>
                             <div id="weatherBoxHum1"></div>
                         </div>
-                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2"
+                            style="text-align: center;">
                             <div id="weatherBoxDate2" style="font-size: 16px; font-weight: bold;"></div>
-                            <br>
-                            <div id="weatherDescription2"></div>
-                            <br>
-                            <div id="weatherBoxTemp2"></div>
-                            <br>
+                            <div id="icon2"><img id="wicon2" src="" alt="Weather icon"></div>
+                            <h1 id="weatherBoxTemp2"></h1>
                             <div id="weatherBoxHum2"></div>
                         </div>
-                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2"
+                            style="text-align: center;">
                             <div id="weatherBoxDate3" style="font-size: 16px; font-weight: bold;"></div>
-                            <br>
-                            <div id="weatherDescription3"></div>
-                            <br>
-                            <div id="weatherBoxTemp3"></div>
-                            <br>
+                            <div id="icon3"><img id="wicon3" src="" alt="Weather icon"></div>
+                            <h1 id="weatherBoxTemp3"></h1>
                             <div id="weatherBoxHum3"></div>
                         </div>
-                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2"
+                            style="text-align: center;">
                             <div id="weatherBoxDate4" style="font-size: 16px; font-weight: bold;"></div>
-                            <br>
-                            <div id="weatherDescription4"></div>
-                            <br>
-                            <div id="weatherBoxTemp4"></div>
-                            <br>
+                            <div id="icon4"><img id="wicon4" src="" alt="Weather icon"></div>
+                            <h1 id="weatherBoxTemp4"></h1>
                             <div id="weatherBoxHum4"></div>
                         </div>
-                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2">
+                        <div id="weatherBoxes" class="col-xs-12 col-sm-10 col-md-5 col-lg-5 col-xl-2"
+                            style="text-align: center;">
                             <div id="weatherBoxDate5" style="font-size: 16px; font-weight: bold;"></div>
-                            <br>
-                            <div id="weatherDescription5"></div>
-                            <br>
-                            <div id="weatherBoxTemp5"></div>
-                            <br>
+                            <div id="icon5"><img id="wicon5" src="" alt="Weather icon"></div>
+                            <h1 id="weatherBoxTemp5"></h1>
                             <div id="weatherBoxHum5"></div>
                         </div>
                     </div>
@@ -112,7 +99,8 @@
         </div>
     </div>
     <!--Footer-->
-    <div class="footer">Copyright</div>
+    <div class="footer">
+    </div>
     <!-- Links to Javascript Page, Jquery, and Moment.js -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
