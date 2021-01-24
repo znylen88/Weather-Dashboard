@@ -4,110 +4,110 @@
 <!--Document Head-->
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="style.css" />
-    <title>Weather Dashboard</title>
-    <style>
-        body {
-          background-image: linear-gradient(to right, #f3f3f3 , #dadada);
-        }
-        #weatherStats {
-          background-image: url('https://images.pexels.com/photos/1431822/pexels-photo-1431822.jpeg?auto=compress&cs=tinysrgb&dpr=2');
-          background-size: cover;
-          background-position: 50% 50%;;
-        }
-        </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <title>Weather Dashboard</title>
+  <style>
+    body {
+      background-image: linear-gradient(to right, #f3f3f3, #dadada);
+    }
+
+    #weatherStats {
+      background-image: url('https://images.pexels.com/photos/1431822/pexels-photo-1431822.jpeg?auto=compress&cs=tinysrgb&dpr=2');
+      background-size: cover;
+      background-position: 50% 50%;
+      ;
+    }
+  </style>
 </head>
 
 <!--Document Body-->
 
 <body>
-    <!--Header-->
-    <nav style="background-color: #3f3f46;">
-        <div class="nav-wrapper">
-          <form id="searchForm">
-            <div class="input-field">
-              <input id="searchInput" type="search" placeholder="Search" required>
-              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-              <i class="material-icons">close</i>
-            </div>
-          </form>
+  <!--Header-->
+  <nav style="background-color: #3f3f46; margin-bottom: 25px;">
+    <div class="nav-wrapper">
+      <form id="searchForm">
+        <div class="input-field">
+          <input id="searchInput" type="search" placeholder="Search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
         </div>
-      </nav>
-    <!--Main Container-->
-    <div class="container" id="mainContainer">
-        <div class="row">
-            <!--Right Card - Contains Current Weather Container & 5-Day Forecast Container-->
-            <div id="rightCard" class="col s12">
-                <!--Current Weather Stats Container-->
-                <div class="container z-depth-5" id="weatherStats">
-                    <h2 id="cityName" style="margin-top: 40px"></h2>
-                    <h6 id="date" style="margin-top: -10px; font-weight: 500;"></h6>
-                    <h6 id="weather" style="font-weight: 300; margin-top: 0px"></h6>
-                    <div id="icon"><img id="wicon" src="" alt="Weather icon" style="width: 60px;">&nbsp</div>
-                    <!-- Dropdown Trigger -->
-  <!-- <a class='dropdown-trigger btn-floating btn-large cyan pulse' href='#' data-target='dropdown1'>MORE</a> -->
-  <!-- Dropdown Structure -->
-  <!-- <ul id='dropdown1' class='dropdown-content'>
-    <li id="humidity"></li>
-    <li class="divider" tabindex="-1"></li>
-    <li id="windSpeed"></li>
-    <li class="divider" tabindex="-1"></li>
-    <li id="uvIndex"></li>
-  </ul> -->
-                </div>
-                <!--5-Day Forecast Container-->
-                <div class="container" id="fiveDayForecast" style="margin-top: 30px;">
-                        <!--5-Day Forecast Weather Boxes-->
-                        <div id="weatherBoxes" class="col s12 m8 push-m2 l2 push-l1 xl2 push-xl1"
-                            style="text-align: center;">
-                            <div id="weatherBoxDate1" style="font-size: 16px; font-weight: bold; margin-bottom: 10px"></div>
-                            <div id="icon1"><img id="wicon1" src="" alt="Weather icon"></div>
-                            <h2 id="weatherBoxTemp1" class="weatherTemp"></h2>
-                            <div id="weatherBoxHum1" style="font-size: 12px; font-weight: 200"></div>
-                        </div>
-                        <div id="weatherBoxes" class="col s12 m8 push-m2 l2 push-l1 xl2 push-xl1"
-                            style="text-align: center;">
-                            <div id="weatherBoxDate2" style="font-size: 16px; font-weight: bold; margin-bottom: 10px"></div>
-                            <div id="icon2"><img id="wicon2" src="" alt="Weather icon"></div>
-                            <h2 id="weatherBoxTemp2" class="weatherTemp"></h2>
-                            <div id="weatherBoxHum2" style="font-size: 12px; font-weight: 200"></div>
-                        </div>
-                        <div id="weatherBoxes" class="col s12 m8 push-m2 l2 push-l1 xl2 push-xl1"
-                            style="text-align: center;">
-                            <div id="weatherBoxDate3" style="font-size: 16px; font-weight: bold; margin-bottom: 10px"></div>
-                            <div id="icon3"><img id="wicon3" src="" alt="Weather icon"></div>
-                            <h2 id="weatherBoxTemp3" class="weatherTemp"></h2>
-                            <div id="weatherBoxHum3" style="font-size: 12px; font-weight: 200"></div>
-                        </div>
-                        <div id="weatherBoxes" class="col s12 m8 push-m2 l2 push-l1 xl2 push-xl1"
-                            style="text-align: center;">
-                            <div id="weatherBoxDate4" style="font-size: 16px; font-weight: bold; margin-bottom: 10px"></div>
-                            <div id="icon4"><img id="wicon4" src="" alt="Weather icon"></div>
-                            <h2 id="weatherBoxTemp4" class="weatherTemp"></h2>
-                            <div id="weatherBoxHum4" style="font-size: 12px; font-weight: 200"></div>
-                        </div>
-                        <div id="weatherBoxes" class="col s12 m8 push-m2 l2 push-l1 xl2 push-xl1"
-                            style="text-align: center;">
-                            <div id="weatherBoxDate5" style="font-size: 16px; font-weight: bold; margin-bottom: 10px"></div>
-                            <div id="icon5"><img id="wicon5" src="" alt="Weather icon"></div>
-                            <h2 id="weatherBoxTemp5" class="weatherTemp"></h2>
-                            <div id="weatherBoxHum5" style="font-size: 12px; font-weight: 200"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </form>
     </div>
-    <!-- Links to Javascript Page, Jquery, and Moment.js -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>      
-    <script src="script.js"></script>
+  </nav>
+  <!--Main Container-->
+  <div class="container" id="mainContainer" style="align-content: center">
+    <div class="row">
+      <!--Current Weather Stats Container-->
+      <div class="flip-card col s12 m8 offset-m2 l8 offset-l2">
+        <div class="flip-card-inner">
+          <div class="flip-card-front z-depth-5" id="weatherStats">
+            <h2 id="cityName" style="margin-top: 40px"></h2>
+            <h6 id="date" style="margin-top: -10px; font-weight: 500;"></h6>
+            <h6 id="weather" style="font-weight: 300; margin-top: 0px"></h6>
+            <div id="icon"><img id="wicon" src="" alt="Weather icon" style="width: 60px;">&nbsp</div>
+          </div>
+          <div class="flip-card-back">
+            <h6 id="tempMin" style="margin-top: 40px"></h6>
+            <h6 id="tempMax"></h6>
+            <h6 id="humidity"></h6>
+            <h6 id="windSpeed"></h6>
+            <h6 id="pressure"></h6>
+            <h6 id="uvIndex"></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--5-Day Forecast Container-->
+    <div class="container" id="fiveDayForecast" style="margin-top: 30px;">
+      <div class="row">
+        <!--5-Day Forecast Weather Boxes-->
+        <div id="weatherBoxes" class="col s12 m8 push-m2 l2 push-l1 xl2 push-xl1" style="text-align: center;">
+          <div id="weatherBoxDate1" style="font-size: 16px; font-weight: bold; margin-bottom: 10px"></div>
+          <div id="icon1"><img id="wicon1" src="" alt="Weather icon"></div>
+          <h2 id="weatherBoxTemp1" class="weatherTemp"></h2>
+          <div id="weatherBoxHum1" style="font-size: 12px; font-weight: 200"></div>
+        </div>
+        <div id="weatherBoxes" class="col s12 m8 push-m2 l2 push-l1 xl2 push-xl1" style="text-align: center;">
+          <div id="weatherBoxDate2" style="font-size: 16px; font-weight: bold; margin-bottom: 10px"></div>
+          <div id="icon2"><img id="wicon2" src="" alt="Weather icon"></div>
+          <h2 id="weatherBoxTemp2" class="weatherTemp"></h2>
+          <div id="weatherBoxHum2" style="font-size: 12px; font-weight: 200"></div>
+        </div>
+        <div id="weatherBoxes" class="col s12 m8 push-m2 l2 push-l1 xl2 push-xl1" style="text-align: center;">
+          <div id="weatherBoxDate3" style="font-size: 16px; font-weight: bold; margin-bottom: 10px"></div>
+          <div id="icon3"><img id="wicon3" src="" alt="Weather icon"></div>
+          <h2 id="weatherBoxTemp3" class="weatherTemp"></h2>
+          <div id="weatherBoxHum3" style="font-size: 12px; font-weight: 200"></div>
+        </div>
+        <div id="weatherBoxes" class="col s12 m8 push-m2 l2 push-l1 xl2 push-xl1" style="text-align: center;">
+          <div id="weatherBoxDate4" style="font-size: 16px; font-weight: bold; margin-bottom: 10px"></div>
+          <div id="icon4"><img id="wicon4" src="" alt="Weather icon"></div>
+          <h2 id="weatherBoxTemp4" class="weatherTemp"></h2>
+          <div id="weatherBoxHum4" style="font-size: 12px; font-weight: 200"></div>
+        </div>
+        <div id="weatherBoxes" class="col s12 m8 push-m2 l2 push-l1 xl2 push-xl1" style="text-align: center;">
+          <div id="weatherBoxDate5" style="font-size: 16px; font-weight: bold; margin-bottom: 10px"></div>
+          <div id="icon5"><img id="wicon5" src="" alt="Weather icon"></div>
+          <h2 id="weatherBoxTemp5" class="weatherTemp"></h2>
+          <div id="weatherBoxHum5" style="font-size: 12px; font-weight: 200"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <!-- Links to Javascript Page, Jquery, and Moment.js -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

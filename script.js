@@ -40,6 +40,9 @@ $.ajax({
         var roundedTempF = Math.round(response.main.temp);
         var roundedWind = Math.round(response.wind.speed);
         var weatherDescription = response.weather[0].main;
+        var maxTemp = Math.round(response.main.temp_max);
+        var minTemp = Math.round(response.main.temp_min);
+        var pressure = Math.round((response.main.pressure/33.8639)* 100) / 100;
         var iconcode = response.weather[0].icon;
         var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
@@ -65,8 +68,11 @@ $.ajax({
         // Append info to the current weather divs
 
         $("#humidity").text("Humidity: " + response.main.humidity + "%");
-        $("#windSpeed").text("Wind Speed: " + roundedWind + " MPH");
+        $("#windSpeed").text("Wind Speed: " + roundedWind + " mph");
+        $('#tempMax').text("High: " + maxTemp + "°");
+        $('#tempMin').text("Low: " + minTemp + "°");
         $('#weather').text(weatherDescription);
+        $('#pressure').text("Pressure: " + pressure + " inHg");
         $('#wicon').attr('src', iconurl);
         $('#icon').append(`${roundedTempF}°`);
         $('#icon').css({
@@ -91,7 +97,7 @@ $.ajax({
 
                 // Append UV index values to the current weather div
 
-                $("#uvIndex").text("UV Index: " + response.value);
+                $("#uvIndex").text("UV Index: " + Math.round(response.value));
             });
 
     });
@@ -207,12 +213,3 @@ $.ajax({
             }
         }
     });
-
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     var elems = document.querySelectorAll('.dropdown-trigger');
-    //     var instances = M.Dropdown.init(elems, options);
-    //   });
-    
-    //   // Or with jQuery
-    
-    //   $('.dropdown-trigger').dropdown();
