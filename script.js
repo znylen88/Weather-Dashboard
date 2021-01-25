@@ -115,6 +115,8 @@ $.ajax({
 
                 var aqi = response.list[0].main.aqi;
 
+                for (var i = 0; i < response.list[0].main.aqi; i++) {
+
                 if (aqi === 1) {
                     $('#airQuality').text(aqi + " - Good");
                 }
@@ -130,6 +132,7 @@ $.ajax({
                 if (aqi === 5) {
                     $('#airQuality').text(aqi + " - Very Poor");
                 }
+            }
             });
     });
 
