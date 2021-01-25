@@ -42,18 +42,19 @@ $.ajax({
         var weatherDescription = response.weather[0].main;
         var maxTemp = Math.round(response.main.temp_max);
         var minTemp = Math.round(response.main.temp_min);
-        var pressure = Math.round((response.main.pressure/33.8639)* 100) / 100;
+        var feelsLike = Math.round(response.main.feels_like);
+        var pressure = Math.round((response.main.pressure / 33.8639) * 100) / 100;
         var iconcode = response.weather[0].icon;
         var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
         if (response.weather[0].main === 'Clouds') {
-            $("#weatherStats").css({"background-image": "url(https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?auto=compress&cs=tinysrgb&dpr=2)", "color": "white", "box-shadow": "#494949 5px 10px 5px"});
+            $("#weatherStats").css({ "background-image": "url(https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?auto=compress&cs=tinysrgb&dpr=2)", "color": "white", "box-shadow": "#494949 5px 10px 5px" });
         }
         if (response.weather[0].main === 'Clear') {
-            $("#weatherStats").css({"background-image": "url(https://images.pexels.com/photos/96622/pexels-photo-96622.jpeg?auto=compress&cs=tinysrgb&dpr=3)", "box-shadow": "5px 10px 5px"});
+            $("#weatherStats").css({ "background-image": "url(https://images.pexels.com/photos/96622/pexels-photo-96622.jpeg?auto=compress&cs=tinysrgb&dpr=3)", "box-shadow": "5px 10px 5px" });
         }
         if (response.weather[0].main === 'Lightning') {
-            $("#weatherStats").css({"background-image": "url(https://images.pexels.com/photos/2531709/pexels-photo-2531709.jpeg?auto=compress&cs=tinysrgb&dpr=2)", "color": "white", "box-shadow": "#494949 5px 10px 5px"});
+            $("#weatherStats").css({ "background-image": "url(https://images.pexels.com/photos/2531709/pexels-photo-2531709.jpeg?auto=compress&cs=tinysrgb&dpr=2)", "color": "white", "box-shadow": "#494949 5px 10px 5px" });
         }
         if (response.weather[0].main === 'Rain') {
             $("#weatherStats").css("background-image", "url(https://images.pexels.com/photos/459483/pexels-photo-459483.jpeg?auto=compress&cs=tinysrgb&dpr=3)");
@@ -67,17 +68,18 @@ $.ajax({
 
         // Append info to the current weather divs
 
-        $("#humidity").text("Humidity: " + response.main.humidity + "%");
-        $("#windSpeed").text("Wind Speed: " + roundedWind + " mph");
-        $('#tempMax').text("High: " + maxTemp + "°");
-        $('#tempMin').text("Low: " + minTemp + "°");
+        $("#humidity").text(response.main.humidity + "%");
+        $("#windSpeed").text(roundedWind + " mph");
+        $('#tempMax').text(maxTemp + "°");
+        $('#tempMin').text(minTemp + "°");
+        $('#feelsLike').text(feelsLike + "°");
         $('#weather').text(weatherDescription);
-        $('#pressure').text("Pressure: " + pressure + " inHg");
+        $('#pressure').text(pressure + " inHg");
         $('#wicon').attr('src', iconurl);
         $('#icon').append(`${roundedTempF}°`);
         $('#icon').css({
-            "font-size":"72px",
-            "font-weight":"bolder" 
+            "font-size": "72px",
+            "font-weight": "bolder"
         });
 
 
@@ -97,9 +99,38 @@ $.ajax({
 
                 // Append UV index values to the current weather div
 
-                $("#uvIndex").text("UV Index: " + Math.round(response.value));
+                $("#uvIndex").text(Math.round(response.value));
             });
 
+        $.ajax({
+            url: "http://api.openweathermap.org/data/2.5/air_pollution?lat=" + cityLat + "&lon=" + cityLng + "&appid=" + APIKey,
+            method: "GET"
+        })
+
+            .then(function (response) {
+
+                console.log(response.list[0].main.aqi);
+
+                // Append AQI values to the current weather div
+
+                var aqi = response.list[0].main.aqi;
+
+                if (aqi === 1) {
+                    $('#airQuality').text(aqi + " - Good");
+                }
+                if (aqi === 2) {
+                    $('#airQuality').text(aqi + " - Fair");
+                }
+                if (aqi === 3) {
+                    $('#airQuality').text(aqi + " - Moderate");
+                }
+                if (aqi === 4) {
+                    $('#airQuality').text(aqi + " - Poor");
+                }
+                if (aqi === 5) {
+                    $('#airQuality').text(aqi + " - Very Poor");
+                }
+            });
     });
 
 // Running AJAX 5 day forecast call to the OpenWeatherMap API

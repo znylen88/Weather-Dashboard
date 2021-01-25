@@ -52,17 +52,42 @@
             <h6 id="date" style="margin-top: -10px; font-weight: 500;"></h6>
             <h6 id="weather" style="font-weight: 300; margin-top: 0px"></h6>
             <div id="icon"><img id="wicon" src="" alt="Weather icon" style="width: 60px;">&nbsp</div>
-            <div style="margin-top: -30px; margin-right: 10px; text-align: right"><button style="background-color: transparent; border: transparent; color: inherit;"><span class="material-icons">
-              info
-              </span></button></div>
+            <div style="margin-top: -30px; margin-right: 10px; text-align: right"><button
+                style="background-color: transparent; border: transparent; color: inherit;"><span
+                  class="material-icons">
+                  info
+                </span></button></div>
           </div>
-          <div class="flip-card-back">
-            <h6 id="tempMin" style="margin-top: 40px"></h6>
-            <h6 id="tempMax"></h6>
-            <h6 id="humidity"></h6>
-            <h6 id="windSpeed"></h6>
-            <h6 id="pressure"></h6>
-            <h6 id="uvIndex"></h6>
+          <div class="flip-card-back" style="text-align: center; padding: 20px">
+            <div class="row" style="margin-top: 20px;">
+              <hr style="margin-bottom: 1px;">
+              <p class="weatherHeadings col s6">LOW</p>
+              <p class="weatherHeadings col s6">HIGH</p>
+              <h6 class="weatherDetails col s6" id="tempMin"></h6>
+              <h6 class="weatherDetails col s6" id="tempMax"></h6>
+            </div>
+            <div class="row">
+              <hr>
+              <p class="weatherHeadings col s6">WIND</p>
+              <p class="weatherHeadings col s6">FEELS LIKE</p>
+              <h6 class="weatherDetails col s6" id="windSpeed"></h6>
+              <h6 class="weatherDetails col s6" id="feelsLike"></h6>
+            </div>
+            <div class="row">
+              <hr>
+              <p class="weatherHeadings col s6">PRESSURE</p>
+              <p class="weatherHeadings col s6">HUMIDITY</p>
+              <h6 class="weatherDetails col s6" id="pressure"></h6>
+              <h6 class="weatherDetails col s6" id="humidity"></h6>
+            </div>
+            <div class="row">
+              <hr>
+              <p class="weatherHeadings col s6">AIR QUALITY</p>
+              <p class="weatherHeadings col s6">UV INDEX</p>
+              <h6 class="weatherDetails col s6" id="airQuality"></h6>
+              <h6 class="weatherDetails col s6" id="uvIndex"></h6>
+            </div>
+            <div class="row"><hr></div>
           </div>
         </div>
       </div>
