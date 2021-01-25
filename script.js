@@ -103,7 +103,7 @@ $.ajax({
             });
 
         $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/air_pollution?lat=" + cityLat + "&lon=" + cityLng + "&appid=" + APIKey,
+            url: "https://api.openweathermap.org/data/2.5/air_pollution?lat=" + cityLat + "&lon=" + cityLng + "&appid=" + APIKey,
             method: "GET"
         })
 
@@ -114,8 +114,6 @@ $.ajax({
                 // Append AQI values to the current weather div
 
                 var aqi = response.list[0].main.aqi;
-
-                for (var i = 0; i < response.list[0].main.aqi; i++) {
 
                 if (aqi === 1) {
                     $('#airQuality').text(aqi + " - Good");
@@ -132,7 +130,6 @@ $.ajax({
                 if (aqi === 5) {
                     $('#airQuality').text(aqi + " - Very Poor");
                 }
-            }
             });
     });
 
